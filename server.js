@@ -4,7 +4,7 @@ const express = require('express')//import express
 const app = express()//create app object.
 require('dotenv').config()//get .env variables
 const {PORT = 3001, DATABASE_URL}=process.env
-
+//const tshirtRouter=require('./')
 
 //Middleware Imports
 const cors =require('cors')
@@ -22,6 +22,9 @@ app.get("/", (req,res)=>{
     response:"Hello World"
   })
 })
+
+//tshirt router
+//app.use('/tshirt', tshirtRouter)
 
 
 //Listener
