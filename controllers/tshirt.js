@@ -6,7 +6,7 @@ const router = express.Router()
 //Index
 router.get('/', async(req,res)=>{
   try{
-    res.json(await Hair.find({}))
+    res.json(await Tshirt.find({}))
   }catch(error){
 
     console.log(error)
@@ -17,7 +17,7 @@ router.get('/', async(req,res)=>{
 //Delete
 router.delete('/:id', async(req,res)=>{
   try{
-    res.json(await Hair.findByIdAndDelete(req.params.id))
+    res.json(await Tshirt.findByIdAndDelete(req.params.id))
   }catch(error){
     res.status(400).json(error)
   }
@@ -26,7 +26,7 @@ router.delete('/:id', async(req,res)=>{
 //Update
 router.put('/:id', async(req,res)=>{
   try{
-    res.json(await Hair.findByIdAndUpdate(req.params.id,req.body,{new:true}))
+    res.json(await Tshirt.findByIdAndUpdate(req.params.id,req.body,{new:true}))
   }catch(error){
 
     console.log(error)
@@ -37,7 +37,7 @@ router.put('/:id', async(req,res)=>{
 //Create
 router.post('/', async(req,res)=>{
   try{
-    res.json(await Hair.create(req.body))
+    res.json(await Tshirt.create(req.body))
   }catch(error){
     res.status(400).json(error)
   }
@@ -46,7 +46,7 @@ router.post('/', async(req,res)=>{
 //Show
 router.get('/:id', async(req,res)=>{
   try{
-    res.json(await Hair.findById(req.params.id))
+    res.json(await Tshirt.findById(req.params.id))
   }catch(error){
     res.status(400).json(error)
   }
