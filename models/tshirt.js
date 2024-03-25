@@ -7,7 +7,8 @@ const tshirtSchema = new Schema({
   description: String,
   price: Number,
   image: String,
-  category: String
+  category: String,
+  new: Boolean
 });
 
 const Tshirt = model("Tshirt", tshirtSchema);
