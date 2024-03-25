@@ -6,7 +6,8 @@ const tshirtSchema = new Schema({
   name: String,
   description: String,
   price: Number,
-  image: String
+  image: String,
+  category: String
 });
 
 const Tshirt = model("Tshirt", tshirtSchema);
