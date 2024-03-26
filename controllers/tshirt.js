@@ -43,13 +43,27 @@ router.post('/', async(req,res)=>{
   }
 })
 
+//Search new shirts
+router.get('/search', async(req,res)=>{
+  try{
+    console.log(`isNew: ${req.query.isNew}`)
+    res.json(await Tshirt.find({new:req.query.isNew}))
+  }catch(error){
+    console.log("from request" + error)
+    res.status(400).json(error)
+  }
+})
+
 //Show
 router.get('/:id', async(req,res)=>{
   try{
+    console.log("find by id")
     res.json(await Tshirt.findById(req.params.id))
   }catch(error){
     res.status(400).json(error)
   }
 })
+
+
 
 module.exports = router
